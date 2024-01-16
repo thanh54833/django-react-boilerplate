@@ -33,7 +33,7 @@ npm-debug.log
 *.map
 
 # General
-/{{project_name}}-venv/
+/search_product-venv/
 /venv/
 /env/
 /output/

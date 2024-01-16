@@ -12,11 +12,11 @@ test_reset:
 	poetry run backend/manage.py test backend/ $(ARG) --parallel
 
 backend_format:
-	black backend 
+	black backend
 
 # Commands for Docker version
 docker_setup:
-	docker volume create {{project_name}}_dbdata
+	docker volume create search_product_dbdata
 	docker-compose build --no-cache backend
 	docker-compose run frontend npm install
 
