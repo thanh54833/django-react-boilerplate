@@ -16,7 +16,7 @@ backend_format:
 
 # Commands for Docker version
 docker_setup:
-	docker volume create search-product_dbdata
+	docker volume create search_product_dbdata
 	docker-compose build --no-cache backend
 	docker-compose run frontend npm install
 

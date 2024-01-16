@@ -1,21 +1,21 @@
 databases:
-  - name: search-product-postgres
-    databaseName: search-product
+  - name: search_product-postgres
+    databaseName: search_product
     plan: free
-    user: search-product
+    user: search_product
 
 services:
   - type: redis
-    name: search-product-redis
+    name: search_product-redis
     plan: free
     ipAllowList: [] # only allow internal connections
 
   - type: web
-    name: search-product
+    name: search_product
     plan: free
     runtime: python
     buildCommand: "./render_build.sh"
-    startCommand: "poetry run gunicorn search-product.wsgi:application --chdir backend --limit-request-line 8188 --log-file -"
+    startCommand: "poetry run gunicorn search_product.wsgi:application --chdir backend --limit-request-line 8188 --log-file -"
     envVars:
       - key: ENABLE_DJANGO_COLLECTSTATIC
         value: 1
@@ -23,12 +23,12 @@ services:
         value: 1
       - key: DATABASE_URL
         fromDatabase:
-          name: search-product-postgres
+          name: search_product-postgres
           property: connectionString
       - key: REDIS_URL
         fromService:
           type: redis
-          name: search-product-redis
+          name: search_product-redis
           property: connectionString
       - fromGroup: python-services
       - fromGroup: integrations-credentials
@@ -41,7 +41,7 @@ services:
   #   runtime: python
   #   env: python
   #   buildCommand: poetry install
-  #   startCommand: "poetry run celery --workdir backend --app=search-product worker --loglevel=info --max-memory-per-child=$WORKER_MAX_MEMORY  --concurrency=$WORKER_CONCURRENCY"
+  #   startCommand: "poetry run celery --workdir backend --app=search_product worker --loglevel=info --max-memory-per-child=$WORKER_MAX_MEMORY  --concurrency=$WORKER_CONCURRENCY"
   #   envVars:
   #     - key: REMAP_SIGTERM
   #       value: SIGQUIT
@@ -51,12 +51,12 @@ services:
   #       sync: false
   #     - key: DATABASE_URL
   #       fromDatabase:
-  #         name: search-product-postgres
+  #         name: search_product-postgres
   #         property: connectionString
   #     - key: REDIS_URL
   #       fromService:
   #         type: redis
-  #         name: search-product-redis
+  #         name: search_product-redis
   #         property: connectionString
   #     - fromGroup: python-services
   #     - fromGroup: integrations-credentials
@@ -65,18 +65,18 @@ services:
   #   runtime: python
   #   env: python
   #   buildCommand: poetry install
-  #   startCommand: "poetry run celery --workdir backend --app=search-product beat --loglevel=info"
+  #   startCommand: "poetry run celery --workdir backend --app=search_product beat --loglevel=info"
   #   envVars:
   #     - key: REMAP_SIGTERM
   #       value: SIGQUIT
   #     - key: DATABASE_URL
   #       fromDatabase:
-  #         name: search-product-postgres
+  #         name: search_product-postgres
   #         property: connectionString
   #     - key: REDIS_URL
   #       fromService:
   #         type: redis
-  #         name: search-product-redis
+  #         name: search_product-redis
   #         property: connectionString
   #     - fromGroup: python-services
   #     - fromGroup: integrations-credentials
@@ -91,7 +91,7 @@ envVarGroups:
       - key: SECRET_KEY
         generateValue: true
       - key: DJANGO_SETTINGS_MODULE
-        value: search-product.settings.production
+        value: search_product.settings.production
       - key: ALLOWED_HOSTS
         value: '*'
   - name: integrations-credentials

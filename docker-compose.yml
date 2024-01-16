@@ -4,9 +4,9 @@ services:
   db:
     image: "postgres:alpine"
     environment:
-      - POSTGRES_USER=search-product
+      - POSTGRES_USER=search_product
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=search-product
+      - POSTGRES_DB=search_product
     ports:
       - "5432"
     volumes:
@@ -64,5 +64,5 @@ services:
 
 volumes:
   dbdata:
-    name: search-product_dbdata
+    name: search_product_dbdata
     external: true

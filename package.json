@@ -1,8 +1,8 @@
 {
-  "name": "search-product-frontend",
+  "name": "search_product-frontend",
   "version": "0.0.1",
   "private": true,
-  "description": "search-product frontend.",
+  "description": "search_product frontend.",
   "engines": {
     "node": ">=18 <21"
   },

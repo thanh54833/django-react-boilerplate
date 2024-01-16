@@ -1,12 +1,11 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { useDispatch, useSelector } from "react-redux";
+import {render, screen, waitFor} from "@testing-library/react";
+import {useDispatch, useSelector} from "react-redux";
 
-import { fetchRestCheck } from "../../store/rest_check";
+import {fetchRestCheck} from "../../store/rest_check";
 import Home from "../Home";
 
 jest.mock("react-redux", () => ({
-  useDispatch: jest.fn(),
-  useSelector: jest.fn(),
+  useDispatch: jest.fn(), useSelector: jest.fn(),
 }));
 
 jest.mock("../../store/rest_check", () => ({
@@ -17,7 +16,7 @@ describe("Home", () => {
   beforeEach(() => {
     useDispatch.mockReturnValue(jest.fn());
     useSelector.mockReturnValue({
-      data: { payload: { result: "Test Result" } },
+      data: {payload: {result: "Test Result"}},
     });
   });
 
@@ -26,7 +25,7 @@ describe("Home", () => {
   });
 
   test("renders static assets and rest API data", async () => {
-    render(<Home />);
+    render(<Home/>);
 
     expect(screen.getByText("Static assets")).toBeInTheDocument();
     expect(screen.getByText("Rest API")).toBeInTheDocument();
@@ -34,7 +33,7 @@ describe("Home", () => {
   });
 
   test("dispatches fetchRestCheck action on mount", async () => {
-    render(<Home />);
+    render(<Home/>);
 
     await waitFor(() => {
       expect(fetchRestCheck).toHaveBeenCalledWith();
