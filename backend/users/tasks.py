@@ -1,6 +1,6 @@
 from django.core import management
 
-from search_product import celery_app
+from search-product import celery_app
 
 
 @celery_app.task

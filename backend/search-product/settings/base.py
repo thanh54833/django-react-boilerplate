@@ -52,7 +52,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "search_product.urls"
+ROOT_URLCONF = "search-product.urls"
 
 TEMPLATES = [
     {
@@ -80,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "search_product.wsgi.application"
+WSGI_APPLICATION = "search-product.wsgi.application"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
