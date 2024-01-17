@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 Django = "^5.0"
-celery = {extras = ["redis"], version = "^5.3.6"}
+celery = { extras = ["redis"], version = "^5.3.6" }
 celery-redbeat = "^2.1.1"
 django-model-utils = "^4.3.1"
 django-webpack-loader = "^3.0.0"
@@ -28,6 +28,7 @@ psutil = "^5.9.7"
 ipython = "^8.18.1"
 sentry-sdk = "^1.39.1"
 setuptools = "^69.0.2"
+common = "^0.1.2"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.7"
@@ -94,26 +95,26 @@ exclude = [
     "virtualenvs",
 ]
 ignore = [
-  # Disable eradicate (commented code removal)
-  "ERA001",
-  # Disable Conflicting lint rules,
-  # see https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
-  "W191",
-  "E501",
-  "E111",
-  "E117",
-  "D206",
-  "D300",
-  "Q000",
-  "Q001",
-  "Q002",
-  "Q003",
-  "COM812",
-  "COM819",
-  "ISC001",
-  "ISC002",
-  # Disable unused `noqa` directive
-  "RUF100",
+    # Disable eradicate (commented code removal)
+    "ERA001",
+    # Disable Conflicting lint rules,
+    # see https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "W191",
+    "E501",
+    "E111",
+    "E117",
+    "D206",
+    "D300",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "COM812",
+    "COM819",
+    "ISC001",
+    "ISC002",
+    # Disable unused `noqa` directive
+    "RUF100",
 ]
 line-length = 100
 indent-width = 4
