@@ -30,6 +30,7 @@ sentry-sdk = "^1.39.1"
 setuptools = "^69.0.2"
 common = "^0.1.2"
 
+
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.7"
 model-bakery = "^1.12.0"

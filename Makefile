@@ -46,7 +46,7 @@ docker_migrate:
 	docker-compose run --rm backend python manage.py migrate
 
 
-push_code:
+push:
 		git add --all && git commit -m "push code" && git push
 
 inspect:
@@ -56,4 +56,6 @@ migrate:
 	    python backend/manage.py makemigrations
 	    python backend/manage.py migrate
 
+run:
+	poetry run python backend/manage.py runserver
 
