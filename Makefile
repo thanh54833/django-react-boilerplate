@@ -45,7 +45,6 @@ docker_makemigrations:
 docker_migrate:
 	docker-compose run --rm backend python manage.py migrate
 
-
 push_code:
 		git add --all && git commit -m "push code" && git push
 
