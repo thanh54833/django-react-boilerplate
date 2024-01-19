@@ -444,16 +444,6 @@ files = [
 ]
 
 [[package]]
-name = "decouple"
-version = "0.0.7"
-description = "Decoupling logic"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "decouple-0.0.7.tar.gz", hash = "sha256:c253c1cc62b76e9720a066f334552548c6de1884bc3bdf456ddb62d61b867b09"},
-]
-
-[[package]]
 name = "defusedxml"
 version = "0.7.1"
 description = "XML bomb protection for Python stdlib modules"
@@ -1584,4 +1574,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "c34df4959b0ac2df480158c3f0ae348bf557f4aba236ea1d8b265e4f1d9d018e"
+content-hash = "4165c897ef355999be38b812fd57fed16edae38dc302fdc1f6b9dcc2e437304c"
