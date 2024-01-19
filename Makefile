@@ -49,7 +49,7 @@ push_code:
 		git add --all && git commit -m "push code" && git push
 
 inspect:
-		python manage.py inspectdb > models.py
+		python backend/manage.py inspectdb > models.py
 
 migrate:
 	    python backend/manage.py makemigrations
