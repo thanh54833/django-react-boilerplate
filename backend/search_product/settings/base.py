@@ -1,8 +1,6 @@
 import os
 
 from decouple import config
-from dj_database_url import parse as db_url
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -22,7 +20,29 @@ AUTH_USER_MODEL = "users.User"
 ALLOWED_HOSTS = []
 
 DATABASES = {
-    "default": config("DATABASE_URL", cast=db_url),
+    # "default": config("DATABASE_URL", cast=db_url),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'spe_sprint',
+    #     'USER': 'dev_ops',
+    #     'PASSWORD': 'dev_ops@2023',
+    #     'HOST': '10.10.13.26',
+    #     'PORT': '5432',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=spe,spe_staging',  # spe_staging
+    #     },
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_template',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=private',  # spe_staging
+        },
+    },
 }
 
 INSTALLED_APPS = [
@@ -32,12 +52,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # other package.
+    "rest_framework",
     "django_js_reverse",
     "webpack_loader",
     "import_export",
-    "rest_framework",
+    # other app.
     "common",
     "users",
+    "product",
 ]
 
 MIDDLEWARE = [

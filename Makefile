@@ -50,7 +50,7 @@ push_code:
 		git add --all && git commit -m "push code" && git push
 
 inspect:
-		python manage.py inspectdb > models.py
+		python backend/manage.py inspectdb > models.py
 
 migrate:
 	    python backend/manage.py makemigrations
@@ -58,4 +58,11 @@ migrate:
 
 run:
 	poetry run python backend/manage.py runserver
+
+
+run_test:
+	poetry run python backend/manage.py test backend.product.tests
+
+install:
+	poetry install
 
