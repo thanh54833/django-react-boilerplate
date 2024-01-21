@@ -1,4 +1,3 @@
-# Create your models here.
 from django.db import models
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
@@ -18,4 +17,4 @@ class Snippet(models.Model):
 
     class Meta:
         app_label = 'product'
-        ordering = ['created']
+        ordering = ['created']  # created #ordering
