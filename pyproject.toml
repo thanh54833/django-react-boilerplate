@@ -29,6 +29,7 @@ ipython = "^8.18.1"
 sentry-sdk = "^1.39.1"
 setuptools = "^69.0.2"
 common = "^0.1.2"
+pymssql = "^2.2.11"
 
 
 [tool.poetry.group.dev.dependencies]
