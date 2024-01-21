@@ -52,10 +52,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # other package.
+    "rest_framework",
     "django_js_reverse",
     "webpack_loader",
     "import_export",
-    "rest_framework",
+    # other app.
     "common",
     "users",
     "product",

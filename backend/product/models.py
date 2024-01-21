@@ -17,4 +17,5 @@ class Snippet(models.Model):
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
 
     class Meta:
+        app_label = 'product'
         ordering = ['created']

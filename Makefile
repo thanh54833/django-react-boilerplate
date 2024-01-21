@@ -58,3 +58,7 @@ migrate:
 run:
 	poetry run python backend/manage.py runserver
 
+
+run_test:
+	poetry run python backend/manage.py test backend.product.tests
+
